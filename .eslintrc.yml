@@ -1,0 +1,89 @@
+---
+env:
+  node: true
+  es6: true
+parserOptions:
+  sourceType: module
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 9
+parser: '@typescript-eslint/parser'
+plugins:
+  - '@typescript-eslint'
+  - react
+  - jsx-a11y
+  - import
+extends:
+  - eslint:recommended
+  - 'plugin:@typescript-eslint/recommended'
+  - 'plugin:@typescript-eslint/eslint-recommended'
+  - plugin:react/recommended
+  - plugin:react-hooks/recommended
+  - prettier
+globals:
+  THREE: true
+  document: true
+  window: true
+  requestAnimationFrame: true
+  FileReader: true
+rules:
+  dot-notation: error
+  no-cond-assign: error
+  no-console:
+    - warn
+    - allow:
+        - error
+        - warn
+  no-fallthrough: error
+  no-irregular-whitespace: error
+  no-nested-ternary: warn
+  no-undef:
+    - off
+  no-unreachable: error
+  no-unused-expressions: 0
+  '@typescript-eslint/no-unused-expressions':
+    - error
+    - allowShortCircuit: true
+      allowTernary: true
+  no-unused-vars:
+    - off
+  '@typescript-eslint/no-unused-vars':
+    - error
+    - vars: all
+      args: after-used
+      ignoreRestSiblings: true
+      argsIgnorePattern: '^_'
+      varsIgnorePattern: '^jsx$|^_'
+  react/jsx-uses-vars: warn
+  react/prop-types: off
+  react/display-name: off
+  '@typescript-eslint/consistent-type-imports': error
+  '@typescript-eslint/explicit-function-return-type': off
+  '@typescript-eslint/camelcase': off
+  '@typescript-eslint/prefer-interface': off
+  '@typescript-eslint/explicit-member-accessibility':
+    - error
+    - accessibility: no-public
+  '@typescript-eslint/explicit-module-boundary-types': off
+  '@typescript-eslint/no-empty-function': off
+  '@typescript-eslint/no-this-alias': off
+  sort-imports: 0
+  import/order:
+    - error
+    - alphabetize:
+        order: asc
+      newlines-between: always
+      groups:
+        - builtin
+        - external
+        - internal
+        - parent
+        - sibling
+        - index
+      pathGroups:
+        - pattern: vector_map/**
+          group: internal
+      pathGroupsExcludedImportTypes: []
+  import/newline-after-import:
+    - error
+    - count: 1
